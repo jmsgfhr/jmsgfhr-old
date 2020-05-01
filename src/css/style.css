@@ -1,0 +1,34 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background: #e5e5e5;
+    box-shadow: 5px 5px 10px #c3c3c3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-div-header {}
+
+.logo {}
+
+.logo-rect {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background: #e5e5e5;
+    box-shadow: 7px 7px 14px #c3c3c3, -7px -7px 14px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
