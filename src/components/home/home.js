@@ -1,9 +1,10 @@
 import React from "react";
+import Presentation from './sections/presentation';
 
 const Home = () => (
-  <div>
-      <h2>home</h2>
-  </div>
+  <>
+    < Presentation />
+  </>
 );
 
 export default Home;

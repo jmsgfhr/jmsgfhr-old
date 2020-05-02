@@ -1,4 +1,5 @@
 import React from "react";
+import Button from '../button/button';
 
 const Header = () => (
   <header className="header">
@@ -7,7 +8,11 @@ const Header = () => (
         <div className="logo-rect">J</div>
       </a>
     </div>
-    <div className="right-div-header"></div>
+    <div className="right-div-header">
+      < Button content="vazio" classType="s-button"/>
+      < Button content="vazio" classType="s-button"/>
+      < Button content="vazio" classType="s-button"/>
+    </div>
   </header>
 );
 
