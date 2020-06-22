@@ -132,6 +132,7 @@ main {
     font-size: 2rem;
     outline: none;
     transition: .3s;
+    z-index: 1;
 }
 
 .presentation-button:active {
