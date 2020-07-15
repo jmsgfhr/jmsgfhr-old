@@ -50,4 +50,9 @@ table {
 html{
 	background-color: #e5e5e5;
 	font-family: 'Roboto', sans-serif;
+	scroll-behavior: smooth;
+}
+
+#root{
+	width: 100%;
 }

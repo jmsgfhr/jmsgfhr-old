@@ -1,16 +1,15 @@
 import React from "react";
-import Button from '../../button/button';
 
 const Presentation = () => (
-  <div className="presentation">
-    <div className="presentation-content">
+  <section className="presentation">
+    <div className="presentation-content container">
       <h1 className="presentation-title">Olá, eu sou Jonathan</h1>
-      <p className="presentation-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra tempor maximus.</p>
-      < Button content="↓" classType="presentation-button" />
+      <p className="presentation-paragraph">Sou programador Front-End, UI designer e um apaixonado em novas linguagens.</p>
+      <a className="presentation-button" href="#about">↓</a>
       <div className="presentation-blob-one"></div>
       <div className="presentation-blob-two"></div>
     </div>
-  </div>
+  </section>
 );
 
 export default Presentation;

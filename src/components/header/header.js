@@ -1,19 +1,21 @@
 import React from "react";
-import Button from '../button/button';
+import { NavLink } from "react-router-dom";
 
 const Header = () => (
   <header className="header">
-    <div className="left-div-header">
-      <a className="logo" href="#">
-        <div className="logo-rect">J</div>
-      </a>
+    <div className="container">
+      <div className="left-div-header">
+        < NavLink to="/" className="logo">
+          <div className="logo-rect">J</div>
+        </ NavLink>
+      </div>
+      <div className="right-div-header">
+        < NavLink to="/portfolio" className="s-button" >Portfólio</ NavLink>
+        < NavLink to="/about" className="s-button" >Sobre</ NavLink>
+        < NavLink to="/contact" className="s-button" >Contato</ NavLink>
+      </div>
     </div>
-    <div className="right-div-header">
-      < Button content="vazio" classType="s-button"/>
-      < Button content="vazio" classType="s-button"/>
-      < Button content="vazio" classType="s-button"/>
-    </div>
-  </header>
+  </header >
 );
 
 export default Header;
