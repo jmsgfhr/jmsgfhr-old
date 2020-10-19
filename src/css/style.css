@@ -17,6 +17,10 @@ main {
     width: 100%;
 }
 
+#id {
+    overflow: hidden;
+}
+
 /*
 
    ▄█    █▄       ▄████████    ▄████████ ████████▄     ▄████████    ▄████████ 
@@ -699,7 +703,6 @@ footer>.container>.made>img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .notFound>.title-404 {

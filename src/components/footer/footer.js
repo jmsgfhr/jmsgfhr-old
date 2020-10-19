@@ -15,13 +15,13 @@ const Footer = () => (
         < NavLink to="/contact" className="s-button" ><p>Contato</p></ NavLink>
       </div>
       <div className="icons-container">
-        <a href="https://www.linkedin.com/in/jonathanms30/" className="contact-footer-icons"><img src={Linkedin}></img></a>
-        <a href="mailto:jonathanms30@gmail.com" className="contact-footer-icons"><img src={Gmail}></img></a>
-        <a href="https://www.facebook.com/jonathan.souza.5036459/" className="contact-footer-icons"><img src={Facebook}></img></a>
-        <a href="https://api.whatsapp.com/send?phone=5521969117585" className="contact-footer-icons"><img src={Whatsapp}></img></a>
+        <a href="https://www.linkedin.com/in/jonathanms30/" className="contact-footer-icons"><img src={Linkedin} alt="Linkedin Logo"></img></a>
+        <a href="mailto:jonathanms30@gmail.com" className="contact-footer-icons"><img src={Gmail} alt="Gmail Logo"></img></a>
+        <a href="https://www.facebook.com/jonathan.souza.5036459/" className="contact-footer-icons"><img src={Facebook} alt="Facebook Logo"></img></a>
+        <a href="https://api.whatsapp.com/send?phone=5521969117585" className="contact-footer-icons"><img src={Whatsapp} alt="Whatsapp Logo"></img></a>
       </div>
       <p className="copyright">Site feito por mim © 2020</p>
-      <a href="https://reactjs.org/" className="made">Feito com <img src={ReactLogo}></img></a>
+      <a href="https://reactjs.org/" className="made">Feito com <img src={ReactLogo} alt="React.js Logo"></img></a>
     </div>
   </footer>
 );

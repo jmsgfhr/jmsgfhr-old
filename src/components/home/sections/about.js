@@ -1,5 +1,4 @@
 import React from "react";
-import Foto from "../../../images/Jonathan.png";
 import Regua from "../../../images/regua.svg";
 import Front from "../../../images/front.svg";
 
@@ -22,7 +21,7 @@ const About = () => (
       <div className="round-photo"><img src="https://i.imgur.com/bpX8xOz.jpg" alt="Este sou eu"></img></div>
       <div className="card-content">
         <div className="card-about">
-          <div className="card-about-icon"><img src={Regua}></img></div>
+          <div className="card-about-icon"><img src={Regua} alt="Ícone de regua e lápis cruzados"></img></div>
           <h3 className="card-about-title">UI Designer</h3>
           <p className="card-about-text">Eu gosto de criar designs simples, fluidos e de fácil utilização. Sou curioso e aprecio procurar e criar sites com novas tendências de design.</p>
           <h4 className="card-about-subtitle">Designs que faço:</h4>
@@ -36,7 +35,7 @@ const About = () => (
           </ul>
         </div>
         <div className="card-about">
-          <div className="card-about-icon"><img src={Front}></img></div>
+          <div className="card-about-icon"><img src={Front} alt="Ícone representando uma tela de computador"></img></div>
           <h3 className="card-about-title">Desenvolvedor Front</h3>
           <p className="card-about-text">Eu amo criar projetos do zero e ver designs criando vida na mão de usuários.</p>
           <h4 className="card-about-subtitle">Linguagens que uso:</h4>
