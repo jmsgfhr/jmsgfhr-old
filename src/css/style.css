@@ -3,6 +3,7 @@
     --white-shadow: #ffffff;
     --gray-shadow: #c3c3c3;
     --gray-shadow-two: #c5c5c5;
+    --background-white: #e5e5e5;
 }
 
 .container {
@@ -14,6 +15,10 @@
 
 main {
     width: 100%;
+}
+
+#id {
+    overflow: hidden;
 }
 
 /*
@@ -33,6 +38,7 @@ main {
     height: 100px;
     background: var(--white-bg);
     display: none;
+    position: relative;
     z-index: 3;
 }
 
@@ -201,7 +207,7 @@ main {
 
 .presentation {
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     overflow: hidden;
     position: relative;
 }
@@ -244,7 +250,7 @@ main {
     z-index: 0;
     position: absolute;
     right: 10%;
-    bottom: 10%;
+    bottom: 20%;
 }
 
 .presentation-blob-two {
@@ -297,14 +303,22 @@ main {
 
 .about {
     width: 100%;
+    height: 2000px;
+    overflow: hidden;
 }
 
-.about .container{
+.about>.container {
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     min-height: 500px;
+    position: relative;
+}
+
+.about>.container * {
+    z-index: 1;
 }
 
 .about-title {
@@ -320,21 +334,422 @@ main {
     text-align: center;
 }
 
-.round-photo{
+.round-photo {
     width: 200px;
     height: 200px;
+    background-color: var(--white-bg);
     border-radius: 100%;
-    box-shadow: 4px 4px 8px #0000002d, -4px -4px 8px #ffffff2d;
+    box-shadow: inset 4px 4px 8px #00000070, inset -4px -4px 8px #ffffff70;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.round-photo>img{
+.round-photo>img {
     width: 180px;
     height: 180px;
     border-radius: 100%;
     object-fit: contain;
+}
+
+.card-content {
+    width: 100%;
+    padding: 10px 0;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: [first] 50% [second] 50%;
+    row-gap: 2px;
+}
+
+.card-about {
+    width: 80%;
+    min-height: 60vh;
+    padding: 20px 0;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 40px 130px 40px 40px 40px 150px;
+    justify-items: center;
+    text-align: center;
+    background-color: var(--white-bg);
+    z-index: 1;
+}
+
+.card-about:first-of-type {
+    border-radius: 15px 15px 0 0;
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+}
+
+.card-about:last-of-type {
+    border-radius: 0 0 15px 15px;
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+}
+
+.card-about-icon {
+    width: 80px;
+    height: 80px;
+    box-shadow: 4px 4px 8px var(--gray-shadow-two), -4px -4px 8px var(--white-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.card-about-icon>img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.card-about-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-about-subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #535353;
+}
+
+.card-about-text {
+    font-size: 1rem;
+    font-weight: lighter;
+    width: 85%;
+    line-height: 1.5rem;
+}
+
+.container>.about-blob {
+    width: 2000px;
+    height: 2000px;
+    position: absolute;
+    z-index: 0;
+}
+
+.about-blob>.blob-about {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+}
+
+.about-blob>.blob-about>path {
+    animation: blob-about 30s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes blob-about {
+    0% {
+        d: path("M 26.9, -51.7C34.7, -42.1, 40.7, -34.5, 49.2, -26.2C57.6, -18, 68.6, -9, 74, 3.1C79.5, 15.3, 79.4, 30.6, 73.5, 43.3C67.6, 56, 55.8, 66.1, 42.6, 65.5C29.4, 64.9, 14.7, 53.4, 5.2, 44.5C-4.3, 35.5, -8.7, 29.1, -18.7, 27.8C-28.7, 26.6, -44.4, 30.6, -48.4, 26.9C-52.5, 23.1, -44.9, 11.6, -40.1, 2.8C-35.3, -6, -33.2, -12, -31.2, -19.3C-29.2, -26.5, -27.2, -35, -22, -46.2C-16.8, -57.3, -8.4, -71, 0.6, -72C9.5, -73, 19.1, -61.3, 26.9, -51.7Z");
+    }
+    25% {
+        d: path("M29.8,-50C38.3,-46.7,44.8,-38.1,54.6,-28.9C64.4,-19.7,77.5,-9.9,75,-1.5C72.5,7,54.3,13.9,45,24C35.7,34.1,35.3,47.3,29.3,54.1C23.3,61,11.6,61.6,2.1,58C-7.5,54.4,-15,46.7,-27.3,43.4C-39.6,40.2,-56.7,41.4,-61.8,34.9C-66.8,28.4,-59.9,14.2,-56.2,2.1C-52.5,-10,-52.2,-19.9,-48.4,-28.6C-44.5,-37.3,-37.3,-44.6,-28.6,-47.9C-20,-51.1,-10,-50.2,0.3,-50.8C10.6,-51.3,21.3,-53.3,29.8,-50Z");
+    }
+    50% {
+        d: path("M30.4,-55C41.7,-46.1,54.7,-42.6,60.5,-34.3C66.3,-26.1,64.8,-13,63.7,-0.7C62.5,11.7,61.7,23.4,54.9,30C48.2,36.6,35.5,38,25.3,40.2C15.2,42.4,7.6,45.5,-1.9,48.8C-11.3,52,-22.7,55.5,-29.2,51.2C-35.8,46.9,-37.6,34.8,-38.9,25C-40.2,15.2,-41,7.6,-44.2,-1.8C-47.3,-11.2,-52.8,-22.5,-53.9,-36.3C-54.9,-50.2,-51.4,-66.7,-41.7,-76.4C-32,-86.1,-16,-89,-3.2,-83.4C9.6,-77.8,19.1,-63.8,30.4,-55Z");
+    }
+    75% {
+        d: path("M31.4,-58C42.3,-48.2,53.7,-42.9,60.4,-34C67,-25.1,68.9,-12.5,65.8,-1.8C62.6,8.9,54.3,17.7,48.4,27.9C42.5,38.1,38.9,49.6,31.2,51.7C23.5,53.7,11.8,46.4,0.5,45.5C-10.8,44.7,-21.6,50.5,-27.3,47.3C-33,44.1,-33.6,31.9,-41.5,22.5C-49.3,13.2,-64.3,6.6,-68.9,-2.6C-73.4,-11.8,-67.5,-23.7,-57.6,-29.4C-47.6,-35.1,-33.7,-34.6,-23.4,-44.8C-13.1,-54.9,-6.6,-75.7,1.9,-79C10.3,-82.2,20.6,-67.8,31.4,-58Z");
+    }
+    100% {
+        d: path("M26.9, -51.7C34.7, -42.1, 40.7, -34.5, 49.2, -26.2C57.6, -18, 68.6, -9, 74, 3.1C79.5, 15.3, 79.4, 30.6, 73.5, 43.3C67.6, 56, 55.8, 66.1, 42.6, 65.5C29.4, 64.9, 14.7, 53.4, 5.2, 44.5C-4.3, 35.5, -8.7, 29.1, -18.7, 27.8C-28.7, 26.6, -44.4, 30.6, -48.4, 26.9C-52.5, 23.1, -44.9, 11.6, -40.1, 2.8C-35.3, -6, -33.2, -12, -31.2, -19.3C-29.2, -26.5, -27.2, -35, -22, -46.2C-16.8, -57.3, -8.4, -71, 0.6, -72C9.5, -73, 19.1, -61.3, 26.9, -51.7Z");
+    }
+}
+
+/*
+   ▄████████  ▄██████▄   ▄██████▄      ███        ▄████████    ▄████████ 
+  ███    ███ ███    ███ ███    ███ ▀█████████▄   ███    ███   ███    ███ 
+  ███    █▀  ███    ███ ███    ███    ▀███▀▀██   ███    █▀    ███    ███ 
+ ▄███▄▄▄     ███    ███ ███    ███     ███   ▀  ▄███▄▄▄      ▄███▄▄▄▄██▀ 
+▀▀███▀▀▀     ███    ███ ███    ███     ███     ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   
+  ███        ███    ███ ███    ███     ███       ███    █▄  ▀███████████ 
+  ███        ███    ███ ███    ███     ███       ███    ███   ███    ███ 
+  ███         ▀██████▀   ▀██████▀     ▄████▀     ██████████   ███    ███ 
+                                                              ███    ███ 
+*/
+
+footer {
+    width: 100%;
+    margin-top: 20vh;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+}
+
+footer>.container {
+    height: 50vh;
+    position: relative;
+}
+
+footer>.container>.contact-card {
+    width: 90%;
+    height: 20vh;
+    padding: 40px 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white-bg);
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer>.container>.contact-card>h3 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+footer>.container>.contact-card>p {
+    font-size: .9rem;
+    text-align: center;
+    line-height: 1rem;
+    width: 70%;
+}
+
+footer>.container>.contact-card>.s-button {
+    height: auto;
+    padding: 7px;
+}
+
+footer>.container>.contact-card>.s-button>p {
+    font-size: 1.2rem;
+    padding: 7px 14px;
+    border-radius: 6px;
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+    transition: .3s;
+}
+
+footer>.container>.contact-card>.s-button:active {
+    box-shadow: none;
+    background: var(--white-bg);
+}
+
+footer>.container>.contact-card>.s-button>p:active {
+    box-shadow: none;
+    transform-origin: .3s;
+}
+
+footer>.container>.copyright {
+    position: absolute;
+    bottom: 25%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+footer>.container>.made {
+    position: absolute;
+    bottom: 5%;
+    font-size: .7rem;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    filter: grayscale(1);
+    transition: .3s;
+    text-decoration: none;
+    color: #000000;
+}
+
+footer>.container>.made:hover {
+    filter: grayscale(0);
+    transition: .3s;
+}
+
+footer>.container>.made>img {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    object-fit: contain;
+}
+
+.icons-container {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icons-container>.contact-footer-icons {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px var(--gray-shadow-two), -4px -4px 8px var(--white-shadow);
+    position: relative;
+    transition: .3s;
+}
+
+.icons-container>.contact-footer-icons:active {
+    box-shadow: none;
+    transition: .3s;
+}
+
+.icons-container>.contact-footer-icons>img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+ ▄████████  ▄██████▄  ███▄▄▄▄       ███        ▄████████  ▄████████     ███     
+███    ███ ███    ███ ███▀▀▀██▄ ▀█████████▄   ███    ███ ███    ███ ▀█████████▄ 
+███    █▀  ███    ███ ███   ███    ▀███▀▀██   ███    ███ ███    █▀     ▀███▀▀██ 
+███        ███    ███ ███   ███     ███   ▀   ███    ███ ███            ███   ▀ 
+███        ███    ███ ███   ███     ███     ▀███████████ ███            ███     
+███    █▄  ███    ███ ███   ███     ███       ███    ███ ███    █▄      ███     
+███    ███ ███    ███ ███   ███     ███       ███    ███ ███    ███     ███     
+████████▀   ▀██████▀   ▀█   █▀     ▄████▀     ███    █▀  ████████▀     ▄████▀ */
+
+.card-form {
+    width: 80%;
+    height: 70vh;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px var(--gray-shadow-two), -4px -4px 8px var(--white-shadow);
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 15% 15% 15% auto 20%;
+}
+
+.contact-form>h3 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.form-group>.form-label {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.form-group>.form-input {
+    width: 80%;
+    max-width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    margin: 0 auto;
+    background-color: var(--white-bg);
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+    border: none;
+    padding: 0 10px;
+    color: #575757;
+}
+
+.form-group>.form-input:focus, .form-group>.form-area {
+    outline: none;
+}
+
+.form-group>.form-area {
+    width: 80%;
+    height: 90px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+    background-color: var(--white-bg);
+    box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
+    border: none;
+    color: #575757;
+}
+
+.contact-form>.s-button {
+    width: 50%;
+}
+
+/*
+       ▄████  ▄██████▄         ▄████ 
+    ▄██  ███ ███    ███     ▄██  ███ 
+  ▄██    ███ ███    ███   ▄██    ███ 
+▄██      ███ ███    ███ ▄██      ███ 
+▀███████████ ███    ███ ▀███████████ 
+         ███ ███    ███          ███ 
+         ███ ███    ███          ███ 
+         █▀   ▀██████▀           █▀  */
+
+.notFound {
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFound>.title-404 {
+    font-size: 7rem;
+    z-index: 1;
+}
+
+.notFound>.text-404 {
+    font-size: 1rem;
+    width: 80%;
+    text-align: center;
+    z-index: 1;
+}
+
+.notFound>.blob-404 {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    position: absolute;
+    transform: scale(1.5);
+    left: -30%;
+    top: 0;
+    z-index: 0;
+}
+
+.notFound>.blob-404>path {
+    animation: blob-404 10s ease-in-out infinite;
+    z-index: 0;
+    transform-origin: 100, 100;
+}
+
+@keyframes blob-404 {
+    0% {
+        d: path("M25.1,-44C30.2,-30.8,30.4,-20.4,36.8,-9.8C43.3,0.8,56,11.6,55.5,19.5C54.9,27.4,41.1,32.5,29.7,36.3C18.2,40.1,9.1,42.7,-0.5,43.3C-10,43.9,-20,42.6,-30.4,38.5C-40.8,34.3,-51.5,27.3,-62.4,15.2C-73.2,3.2,-84.1,-13.8,-81.6,-28.1C-79.2,-42.4,-63.3,-53.9,-47.5,-63.5C-31.7,-73.2,-15.8,-81.1,-2.9,-77.1C10,-73,20,-57.2,25.1,-44Z");
+    }
+    25% {
+        d: path("M32.7,-38.9C45.3,-35.8,60.6,-30.2,66.4,-19.8C72.2,-9.4,68.5,5.8,61.4,17.5C54.3,29.2,43.6,37.3,32.8,43.4C22,49.4,11,53.4,-1.4,55.3C-13.7,57.1,-27.4,56.9,-31.8,48.7C-36.1,40.6,-31.1,24.5,-29.8,13.3C-28.6,2,-31.1,-4.5,-31.8,-12.8C-32.4,-21,-31.2,-31.2,-25.6,-36.5C-20,-41.9,-10,-42.5,0,-42.6C10,-42.6,20,-42,32.7,-38.9Z");
+    }
+    50% {
+        d: path("M23.7,-26.4C37,-22.9,58.4,-24.4,69.9,-16.2C81.5,-8.1,83.3,9.8,76.3,22.8C69.3,35.7,53.5,43.8,39.3,46.2C25.1,48.7,12.5,45.6,1.4,43.7C-9.7,41.7,-19.3,40.8,-34.1,38.5C-48.9,36.2,-68.8,32.5,-72.9,23C-76.9,13.4,-65.1,-1.9,-59.7,-19.6C-54.2,-37.3,-55.1,-57.2,-46.3,-62.1C-37.4,-66.9,-18.7,-56.8,-6.7,-47.5C5.2,-38.2,10.4,-29.8,23.7,-26.4Z");
+    }
+    75% {
+        d: path("M23.6,-34.2C30.3,-27.7,35.1,-20.3,44.8,-10C54.4,0.4,68.9,13.7,69.1,25.4C69.3,37,55.3,46.9,41.4,51.9C27.5,57,13.7,57.2,0.8,56.1C-12.1,54.9,-24.1,52.4,-39.5,47.8C-54.9,43.2,-73.5,36.6,-74.9,25.8C-76.4,15.1,-60.6,0.3,-54.4,-17.3C-48.1,-34.8,-51.3,-54.9,-43.8,-61.2C-36.4,-67.5,-18.2,-59.8,-4.8,-53.2C8.5,-46.5,17,-40.8,23.6,-34.2Z");
+    }
+    100% {
+        d: path("M25.1,-44C30.2,-30.8,30.4,-20.4,36.8,-9.8C43.3,0.8,56,11.6,55.5,19.5C54.9,27.4,41.1,32.5,29.7,36.3C18.2,40.1,9.1,42.7,-0.5,43.3C-10,43.9,-20,42.6,-30.4,38.5C-40.8,34.3,-51.5,27.3,-62.4,15.2C-73.2,3.2,-84.1,-13.8,-81.6,-28.1C-79.2,-42.4,-63.3,-53.9,-47.5,-63.5C-31.7,-73.2,-15.8,-81.1,-2.9,-77.1C10,-73,20,-57.2,25.1,-44Z");
+    }
 }
 
 /*
@@ -349,7 +764,7 @@ main {
   ███    ███                                                                                                       
 */
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .presentation-title {
         font-size: 4rem;
     }
@@ -363,6 +778,43 @@ main {
     .presentation-blob-two {
         width: 300px;
         height: 300px;
+    }
+    .about {
+        height: 1200px;
+    }
+    .card-about {
+        width: 90%;
+        min-height: 40vh;
+    }
+    .card-content {
+        grid-template-rows: 100%;
+        grid-template-columns: [first] 50% [second] 50%;
+        column-gap: 5px;
+    }
+    .card-about:first-of-type {
+        border-radius: 15px 0 0 15px;
+        justify-self: end;
+    }
+    .card-about:last-of-type {
+        border-radius: 0 15px 15px 0;
+        justify-self: start;
+    }
+    .container>.about-blob {
+        width: 1200px;
+        height: 1200px;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, 0%);
+    }
+    footer>.container>.contact-card {
+        width: 70%;
+        height: 15vh;
+    }
+    footer>.container {
+        height: 35vh;
+    }
+    .icons-container {
+        width: 55%;
     }
 }
 
@@ -391,14 +843,33 @@ main {
         height: 350px;
         left: 0%;
     }
-    .header{
+    .header {
         display: block;
     }
     .header>.container {
         width: 960px;
     }
-    .about{
-        margin-top: 0;
+    .card-content>.card-about {
+        border-radius: 15px;
+        justify-self: center;
+        align-self: center;
+    }
+    .card-form {
+        width: 60%;
+    }
+    .form-group {
+        width: 70%;
+    }
+    .form-group>.form-input, .form-group>.form-area {
+        width: 100%;
+    }
+    .notFound>.text-404 {
+        font-size: 1.5rem;
+        width: 500px;
+    }
+    .notFound>.blob-404 {
+        transform: scale(1.2);
+        left: auto;
     }
 }
 
@@ -416,5 +887,17 @@ main {
     .presentation-blob-two {
         width: 400px;
         height: 400px;
+    }
+    footer>.container>.contact-card {
+        width: 100%;
+        height: 15vh;
+        padding: 40px 40px;
+        flex-direction: row;
+    }
+    footer>.container>.contact-card>p {
+        width: 360px;
+    }
+    footer>.container {
+        height: 40vh;
     }
 }
