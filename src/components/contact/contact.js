@@ -37,22 +37,22 @@ class Contact extends React.Component {
         return (
             <div className="container">
                 <div className="card-form">
-                <form id="contact-form" className="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                    <h3>Contato</h3>
-                    <div className="form-group">
-                        <label className="form-label" htmlFor="name">Nome:</label>
-                        <input type="text" className="form-input" id="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-                    </div>
-                    <div className="form-group">
-                        <label className="form-label" htmlFor="exampleInputEmail1">Email:</label>
-                        <input type="email" className="form-input" id="email" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-                    </div>
-                    <div className="form-group">
-                        <label className="form-label" htmlFor="message">Mensagem:</label>
-                        <textarea className="form-area" rows="5" id="message" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-                    </div>
-                    <button type="submit" className="s-button">Enviar</button>
-                </form>
+                    <form id="contact-form" className="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                        <h3>Contato</h3>
+                        <div className="form-group">
+                            <label className="form-label" htmlFor="name">Nome:</label>
+                            <input type="text" className="form-input" id="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+                        </div>
+                        <div className="form-group">
+                            <label className="form-label" htmlFor="exampleInputEmail1">Email:</label>
+                            <input type="email" className="form-input" id="email" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+                        </div>
+                        <div className="form-group">
+                            <label className="form-label" htmlFor="message">Mensagem:</label>
+                            <textarea className="form-area" rows="5" id="message" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
+                        </div>
+                        <button type="submit" className="s-button">Enviar</button>
+                    </form>
                 </div>
             </div>
         );

@@ -17,10 +17,6 @@ main {
     width: 100%;
 }
 
-#id {
-    overflow: hidden;
-}
-
 /*
 
    ▄█    █▄       ▄████████    ▄████████ ████████▄     ▄████████    ▄████████ 
@@ -662,7 +658,7 @@ footer>.container>.made>img {
     background-color: var(--white-bg);
     box-shadow: inset 4px 4px 8px var(--gray-shadow-two), inset -4px -4px 8px var(--white-shadow);
     border: none;
-    padding: 0 10px;
+    padding: 10px;
     color: #575757;
 }
 
@@ -858,7 +854,7 @@ footer>.container>.made>img {
         width: 60%;
     }
     .form-group {
-        width: 70%;
+        width: 80%;
     }
     .form-group>.form-input, .form-group>.form-area {
         width: 100%;
